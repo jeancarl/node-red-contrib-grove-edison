@@ -1,0 +1,50 @@
+<script type="text/javascript">
+    RED.nodes.registerType('button',{
+        category: 'grove',
+        color: '#C7E9C0',
+        defaults: {
+          name: {value:''},
+          port: {value:'7'},
+          payload: {value:''},
+          on: {value:'down'}
+	      },
+        inputs: 0,
+        outputs: 1,
+        icon: 'inject.png',
+        label: function() {
+            return this.name||'button';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="button">
+    <div class="form-row">
+        <label for="node-input-on"><i class="fa fa-paw"></i> Trigger On</label>
+        <select id="node-input-on">
+          <option value="down">Button Down</option>
+          <option value="up">Button Up</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-payload"><i class="fa fa-file-text"></i> Payload</label>
+        <input type="text" id="node-input-payload" placeholder="Payload">
+    </div>
+    <div class="form-row">
+        <label for="node-input-port"><i class="fa fa-plug"></i> Port</label>
+        <input type="text" id="node-input-port" placeholder="Port">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="button">
+    <p>Listens to specified port on Grove base shield for a button event. If provided, Payload/msg.payload will be placed into the msg.payload.</p>
+    <p><b>msg.on</b>, overrides Trigger On value, can be either:</p>
+    <ul>
+      <li><i>down</i> to listen for when the button is pressed or</li>
+      <li><i>up</i> for when the button is released.</li>
+    </ul>
+    <p><b>msg.payload</b>, overrides Payload value, can be a string that is placed into the msg.payload output.</p>
+</script>

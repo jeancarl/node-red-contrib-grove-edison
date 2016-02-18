@@ -1,0 +1,48 @@
+<script type="text/javascript">
+    RED.nodes.registerType('led',{
+        category: 'grove',
+        color: '#C7E9C0',
+        align: 'right',
+        defaults: {
+            name: {value:''},
+            port: {value:'6'},
+            operation: {value:'on'}
+	      },
+        align: 'right',
+        inputs: 1,
+        outputs: 0,
+        icon: 'light.png',
+        label: function() {
+            return this.name||'led';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="led">
+    <div class="form-row">
+        <label for="node-input-operation"><i class="icon-plug"></i> Operation</label>
+        <select id="node-input-operation">
+          <option value="on">On</option>
+          <option value="off">Off</option>
+          <option value="toggle">Toggle</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-port"><i class="fa fa-plug"></i> Port</label>
+        <input type="text" id="node-input-port" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="led">
+    <p>Turn on/off LED light conected to the specified port of Grove base shield.</p>
+    <p><b>msg.mode</b>, overrides Operation value, can be either:</p>
+    <ul>
+      <li><i>on</i> turns the LED on or</li>
+      <li><i>off</i> turns the LED off or</li>
+      <li><i>toggle</i> turns the LED on if off, or off if on.</li>
+    </ul>
+</script>

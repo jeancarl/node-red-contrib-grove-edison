@@ -1,0 +1,46 @@
+<script type="text/javascript">
+    RED.nodes.registerType('temperature', {
+        category: 'grove',
+        color: '#C7E9C0',
+        defaults: {
+            name: {value:''},
+            port: {value:'0'},
+            unit: {value:'celsius'}
+	      },
+        inputs: 1,
+        outputs: 1,
+        icon: "feed.png",
+        label: function() {
+            return this.name||'temperature';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="temperature">
+    <div class="form-row">
+        <label for="node-input-unit"><i class="fa fa-tint"></i> Unit</label>
+        <select id="node-input-unit">
+          <option value="fahrenheit">Fahrenheit</option>
+          <option value="celsius">Celsius</option>
+          <option value="all">All</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-port"><i class="fa fa-plug"></i> Port</label>
+        <input type="text" id="node-input-port" placeholder="Port">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="temperature">
+<p>Listens to specified port on Grove base shield for a temperature value. If msg.payload is an object, will be placed into msg.payload output with farenheit and/or celsius properties.</p>
+<p><b>msg.unit</b>, overrides Unit value, can be either:</p>
+<ul>
+  <li><i>farenheit</i> for the Fahrenheit temperature to be returned in <b>msg.fahrenheit</b></li>
+  <li><i>up</i> for the Celcius temperature to be returned in <b>msg.celcius</b></li>
+  <li><i>all</i> for both Fahrenheit temperature and Celcius temperature to be returned in <b>msg.fahrenheit</b> and <b>msg.celcius</b>, respectively.</li>
+</ul>
+</script>

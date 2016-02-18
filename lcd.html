@@ -1,0 +1,60 @@
+<script type="text/javascript">
+    RED.nodes.registerType('lcd',{
+        category: 'grove',
+        color: '#C7E9C0',
+        align: 'right',
+        defaults: {
+          name: {value:''},
+          port: {value:'0'},
+          line1: {value:''},
+          line2: {value:''},
+          bgColorR: {value: 255},
+          bgColorG: {value: 255},
+          bgColorB: {value: 255}
+	      },
+        inputs: 1,
+        outputs: 0,
+        icon: 'light.png',
+        label: function() {
+            return this.name||'lcd';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="lcd">
+    <div class="form-row">
+        <label for="node-input-line1"><i class="fa fa-file-text"></i> Line 1</label>
+        <input type="text" id="node-input-line1" placeholder="Line 1">
+    </div>
+    <div class="form-row">
+        <label for="node-input-line2"><i class="fa fa-file-text"></i> Line 2</label>
+        <input type="text" id="node-input-line2" placeholder="Line 2">
+    </div>
+    <div class="form-row">
+        <label for="node-input-bgColorR"><i class="fa fa-eyedropper"></i> Background</label>
+        <input type="text" id="node-input-bgColorR" placeholder="R" style="width: 50px; display: inline">
+        <input type="text" id="node-input-bgColorG" placeholder="G" style="width: 50px; display: inline">
+        <input type="text" id="node-input-bgColorB" placeholder="B" style="width: 50px; display: inline">
+    </div>
+    <div class="form-row">
+        <label for="node-input-port"><i class="fa fa-plug"></i> Port</label>
+        <input type="text" id="node-input-port" placeholder="Port">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="lcd">
+  <p>Display text on and change background color of LCD connected to the specified port of Grove base shield.</p>
+  <p><b>msg.line1</b>, overrides Line 1 value, is the first line of text displayed on LCD</p>
+  <p><b>msg.line2</b>, overrides Line 2 value, is the second line of text displayed on LCD</p>
+
+  <p>The background color of the LCD can be customized providing the RGB values:</p>
+  <ul>
+    <li><b>msg.bgColorR</b>, overrides R(ed) Background value, is the Red value (0-255)</li>
+    <li><b>msg.bgColorG</b>, overrides G(reen) Background value, is the Green value (0-255)</li>
+    <li><b>msg.bgColorB</b>, overrides B(lue) Background value, is the Blue value (0-255)</li>
+  </ul>
+</script>

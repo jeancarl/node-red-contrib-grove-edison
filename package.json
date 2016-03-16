@@ -1,0 +1,19 @@
+{
+  "name": "node-red-contrib-grove-edison",
+  "version": "0.1.0",
+  "description": "Node-RED nodes that abstract Grove sensors used with the Intel Edison board",
+  "main": "button.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeancarl/node-red-contrib-grove-edison.git"
+  },
+  "author": "JeanCarl Bisson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeancarl/node-red-contrib-grove-edison/issues"
+  },
+  "homepage": "https://github.com/jeancarl/node-red-contrib-grove-edison#readme"
+}

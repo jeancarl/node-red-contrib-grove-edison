@@ -1,10 +1,19 @@
 {
   "name": "node-red-contrib-grove-edison",
   "version": "0.1.0",
-  "description": "Node-RED nodes that abstract Grove sensors used with the Intel Edison board",
-  "main": "button.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "Node-RED nodes for Grove sensors used with the Intel Edison board",
+  "dependencies": {
+    "jsupm_grove": "0.x"
+  },
+  "node-red": {
+    "nodes": {
+      "button": "nodes/button.js",
+      "lcd": "nodes/lcd.js",
+      "led": "nodes/led.js",
+      "rotary": "nodes/rotary.js",
+      "temperature": "nodes/temperature.js",
+      "touch": "nodes/touch.js"
+    }
   },
   "repository": {
     "type": "git",
